@@ -44,7 +44,7 @@ const keyUpdateMiddleware = async (req, res) => {
 
     const data = await Keys.findOne(query);
     if (!data) {
-      res.status(400).send(`Key wasn't found`);
+      res.status(404).send(`Key wasn't found`);
     }
 
     await Keys.updateOne(query, modifier);
@@ -61,7 +61,7 @@ const keyDeleteMiddleware = async (req, res) => {
 
     const data = await Keys.findOne(query);
     if (!data) {
-      res.status(400).send(`Key wasn't found`);
+      res.status(404).send(`Key wasn't found`);
     }
 
     await Keys.deleteOne(query);
