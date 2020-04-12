@@ -1,6 +1,6 @@
 ## Run the API
 
-- run
+run
 ```bash
 npm install;
 npm start;
@@ -35,3 +35,14 @@ Available enpoints:
 - ``PUT /api/?key=geronimo`` updates key, requires body ``{ name: newName }`` to set a new name
 - ``DELETE /api/?key=geronimo`` deletes certain key
 - ``GET /api/all`` deletes all existing keys
+
+## Testing
+run
+```bash
+npm start;
+```
+in one terminal window and
+```bash
+   npm test;
+```
+in another one.
