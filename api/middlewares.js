@@ -22,7 +22,7 @@ const checkKeyMiddleware = (req, res, next) => {
 const checkNameMiddleware = (req, res, next) => {
   const { name } = req.body;
   if (!name) {
-    res.status(500).send('New name is required');
+    res.status(400).send('New name is required');
   } else {
     next();
   }
@@ -44,7 +44,7 @@ const keyUpdateMiddleware = async (req, res) => {
 
     const data = await Keys.findOne(query);
     if (!data) {
-      res.status(500).send(`Key wasn't found`);
+      res.status(400).send(`Key wasn't found`);
     }
 
     await Keys.updateOne(query, modifier);
@@ -61,7 +61,7 @@ const keyDeleteMiddleware = async (req, res) => {
 
     const data = await Keys.findOne(query);
     if (!data) {
-      res.status(500).send(`Key wasn't found`);
+      res.status(400).send(`Key wasn't found`);
     }
 
     await Keys.deleteOne(query);
